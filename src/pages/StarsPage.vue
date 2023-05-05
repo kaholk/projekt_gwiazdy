@@ -247,8 +247,7 @@
                 <q-scroll-area style="height: 200px">
                     <q-expansion-item v-for="star in StarsStore.starsList" :caption="`${star.nazwa} (${star.pozycja_x}, ${star.pozycja_y})`" group="starsGroup" v-if="$q.screen.lt.md">
                         <div class="row wrap">
-                            <!-- <div class="col-xs-12 col-md-2 col-lg-3">{{ star.nazwa }} ({{ star.pozycja_x }}, {{ star.pozycja_y }})</div> -->
-                            <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="StarsStore.markStar(star.id)">Pokaż</q-btn></div>
+                            <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" :flat="$q.dark.isActive" @click="StarsStore.markStar(star.id)">Pokaż</q-btn></div>
                             <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="getStarDetails(star.id)">Informacje</q-btn></div>
                             <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="manageConstelationsLoad(star.id)">Konstelacje</q-btn></div>
                             <div class="col-xs-6 col-md-2 col-lg-1"><q-btn color="primary" flat @click="editStar(star.id)">Edytuj</q-btn></div>
@@ -257,11 +256,13 @@
                     </q-expansion-item>
                     <div class="row wrap" v-else v-for="star in StarsStore.starsList">
                         <div class="col-xs-12 col-md-3 col-lg-3">{{ star.nazwa }} ({{ star.pozycja_x }}, {{ star.pozycja_y }})</div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="StarsStore.markStar(star.id)">Pokaż</q-btn></div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="getStarDetails(star.id)">Informacje</q-btn></div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="manageConstelationsLoad(star.id)">Konstelacje</q-btn></div>
-                        <div class="col-xs-6 col-md-1 col-lg-1"><q-btn color="primary" flat @click="editStar(star.id)">Edytuj</q-btn></div>
-                        <div class="col-xs-6 col-md-1 col-lg-1"><q-btn color="negative" flat @click="starDeleteDialogLoad(star.id)">Usuń</q-btn></div>
+                        <q-btn-group flat stretch>
+                            <q-btn color="primary" flat @click="StarsStore.markStar(star.id)">Pokaż</q-btn>
+                            <q-btn color="primary" flat @click="getStarDetails(star.id)">Informacje</q-btn>
+                            <q-btn color="primary" flat @click="manageConstelationsLoad(star.id)">Konstelacje</q-btn>
+                            <q-btn color="primary" flat @click="editStar(star.id)">Edytuj</q-btn>
+                            <q-btn color="negative" flat @click="starDeleteDialogLoad(star.id)">Usuń</q-btn>
+                        </q-btn-group>
                     </div>
                 </q-scroll-area>
             </div>
@@ -273,7 +274,6 @@
                 <q-scroll-area style="height: 200px">
                     <q-expansion-item v-if="$q.screen.lt.md" v-for="constellation in StarsStore.constellationList" :caption="constellation.nazwa" group="constellationGroup">
                         <div class="row wrap">
-                            <!-- <div class="col-xs-12 col-md-2 col-lg-2">{{ constellation.nazwa }}</div> -->
                             <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="markConstellaton(constellation.id)">Pokaż</q-btn></div>
                             <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="getConstelallationDetails(constellation.id)">Informacje</q-btn></div>
                             <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="editConstellation(constellation.id)">Edytuj</q-btn></div>
@@ -283,11 +283,13 @@
                     </q-expansion-item>
                     <div class="row wrap" v-else v-for="constellation in StarsStore.constellationList">
                         <div class="col-xs-12 col-md-2 col-lg-2">{{ constellation.nazwa }}</div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="markConstellaton(constellation.id)">Pokaż</q-btn></div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="getConstelallationDetails(constellation.id)">Informacje</q-btn></div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="editConstellation(constellation.id)">Edytuj</q-btn></div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="primary" flat @click="manageStarsLoad(constellation.id)">Gwiazdy</q-btn></div>
-                        <div class="col-xs-6 col-md-2 col-lg-2"><q-btn color="negative" flat @click="constellationDeleteDialogLoad(constellation.id)">Usuń</q-btn></div>                    
+                        <q-btn-group flat stretch>
+                            <q-btn color="primary" flat @click="markConstellaton(constellation.id)">Pokaż</q-btn>
+                            <q-btn color="primary" flat @click="getConstelallationDetails(constellation.id)">Informacje</q-btn>
+                            <q-btn color="primary" flat @click="editConstellation(constellation.id)">Edytuj</q-btn>
+                            <q-btn color="primary" flat @click="manageStarsLoad(constellation.id)">Gwiazdy</q-btn>
+                            <q-btn color="negative" flat @click="constellationDeleteDialogLoad(constellation.id)">Usuń</q-btn>
+                        </q-btn-group>              
                     </div>
                 </q-scroll-area>
             </div>

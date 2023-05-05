@@ -35,7 +35,7 @@ import { mdiCalendar, mdiStarShooting, mdiLightbulbOn, mdiLightbulbOff} from "@q
 
 const essentialLinks: EssentialLinkProps[] = [
   {
-    title: 'Wybierz Date',
+    title: 'Pogoda',
     caption: '',
     icon: mdiCalendar,
     link: '/'
