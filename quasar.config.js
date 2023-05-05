@@ -8,13 +8,10 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
-
 const { configure } = require('quasar/wrappers');
-
 
 module.exports = configure(function (/* ctx */) {
   return {
-    
 
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -23,7 +20,6 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
-      
       'axios',
     ],
 
@@ -88,7 +84,8 @@ module.exports = configure(function (/* ctx */) {
     framework: {
       iconSet: "mdi-v7",
       
-      config: {  
+      config: {
+        dark: true,
         loadingBar:{
           size: "5px",
           color: "green"
@@ -111,7 +108,7 @@ module.exports = configure(function (/* ctx */) {
       // Quasar plugins
       plugins: [
         "LoadingBar",
-        "Notify"
+        "Notify",
       ]
     },
 

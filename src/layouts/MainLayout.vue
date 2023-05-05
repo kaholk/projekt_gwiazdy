@@ -5,10 +5,9 @@
         <q-btn flat dense round icon="mdi-menu" aria-label="Menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
         </q-toolbar-title>
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn :icon="$q.dark.isActive ? mdiLightbulbOn : mdiLightbulbOff" flat round @click="$q.dark.toggle()"/>
       </q-toolbar>
     </q-header>
-
     <q-drawer
       v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
@@ -32,7 +31,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue';
-import { mdiCalendar, mdiStarShooting } from "@quasar/extras/mdi-v7"
+import { mdiCalendar, mdiStarShooting, mdiLightbulbOn, mdiLightbulbOff} from "@quasar/extras/mdi-v7"
 
 const essentialLinks: EssentialLinkProps[] = [
   {

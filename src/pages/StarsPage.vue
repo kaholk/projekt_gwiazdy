@@ -546,10 +546,10 @@ const markConstellaton = async (constellationId: number) =>{
 }
 
 .texthover{
-    color: $indigo-10;
+    color: $secondary;
     &:hover{
         cursor: pointer;
-        color: $cyan;
+        color: $accent;
     }
 }
  

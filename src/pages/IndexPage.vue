@@ -21,8 +21,8 @@
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">Rodzaj Opadu</div>
       <precipitation-type v-model="calendarBody.rodzaj_opadu" class="col-xs-12 col-sm-12 col-md-8 col-lg-10 col-xl-10"/>
     </div>
-    <q-btn color="blue" @click="saveChanegs" v-if="dateListArray.includes(calendarBody.data)">Zapisz zmiany</q-btn>
-    <q-btn color="blue" @click="saveChanegs" v-else>Dodaj nowy dzień</q-btn>
+    <q-btn color="primary" @click="saveChanegs" v-if="dateListArray.includes(calendarBody.data)">Zapisz zmiany</q-btn>
+    <q-btn color="primary" @click="saveChanegs" v-else>Dodaj nowy dzień</q-btn>
   </q-page>
 </template>
 
