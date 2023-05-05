@@ -39,11 +39,6 @@ quasar build
 ```
 ---
 
-<br>
-<br>
-
----
-
 ## Funkcje Aplikacji
 
 Podstrona `Pogoda`:
