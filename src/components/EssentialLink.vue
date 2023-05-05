@@ -3,6 +3,7 @@
     clickable
     tag="a"
     :to="link"
+    :active="$route.path == link"
   >
     <q-item-section
       v-if="icon"
@@ -20,7 +21,7 @@
 
 <script setup lang="ts">
 export interface EssentialLinkProps {
-  title: string;
+  title?: string;
   caption?: string;
   link?: string;
   icon?: string;

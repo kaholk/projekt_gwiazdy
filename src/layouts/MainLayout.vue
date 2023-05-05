@@ -44,7 +44,7 @@ const essentialLinks: EssentialLinkProps[] = [
     title: 'Edycja Nieba',
     caption: '',
     icon: mdiStarShooting,
-    link: 'stars'
+    link: '/stars'
   },
 ];
 
