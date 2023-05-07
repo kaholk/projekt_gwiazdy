@@ -5,7 +5,10 @@
 ## Opis
 Aplikacjia do zarządzania wyglądem nocnego nieba
 
-Uaga aplikacja korzysta z serwera bekend który znajduje sie [tutaj]()
+Aplikacja jest dostępna pod adresem
+https://gwiazdy.srym.pl/
+
+Uwaga aplikacja korzysta z serwera beckend który znajduje sie [tutaj](https://github.com/SzymonRcode/GwiazdyApp)
 
 Aplikacja składa się z 2 podstron: `Pogoda` i `Edycja nieba`
 - Podstrona `pogoda` pozwala dla danej daty z kalendarza na ustawienie parametrów pogodowych takich jak: Faza księzyca, Poziom zachmurzenia, Poziom mgły oraz Rodzaj Opadu
@@ -38,6 +41,19 @@ quasar dev
 quasar build
 ```
 ---
+
+
+### Konfiguracja połączenia do serwera api
+> src/boot/axios.ts
+```
+  baseURL: 'api_url',
+  auth: {
+    username: "username",
+    password: "password"
+  },
+
+```
+
 
 ## Funkcje Aplikacji
 
