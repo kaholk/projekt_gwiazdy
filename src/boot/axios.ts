@@ -16,10 +16,10 @@ declare module '@vue/runtime-core' {
 // "export default () => {}" function below (which runs individually
 // for each client)
 const api = axios.create({ 
-  baseURL: 'https://api-gwiazdy.srym.pl/',
+  baseURL: process.env.ApiURL,
   auth: {
-    username: "gwiazdy",
-    password: "GwiazdyApi@1337"
+    username: process.env.ApiLogin as string,
+    password: process.env.ApiPassword as string
   },
   timeout: 1000 * 8
 });
