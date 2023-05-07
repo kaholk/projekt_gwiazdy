@@ -3,19 +3,19 @@
 <br>
 
 ## Opis
-Aplikacjia do zarządzania wyglądem nocnego nieba
+Aplikacja do zarządzania wyglądem nocnego nieba
 
 Aplikacja jest dostępna pod adresem
 https://gwiazdy.srym.pl/
 
-Uwaga aplikacja korzysta z serwera beckend który znajduje sie [tutaj](https://github.com/SzymonRcode/GwiazdyApp)
+Uwaga aplikacja korzysta z serwera backend który znajduje sie [tutaj](https://github.com/SzymonRcode/GwiazdyApp)
 
 Aplikacja składa się z 2 podstron: `Pogoda` i `Edycja nieba`
-- Podstrona `pogoda` pozwala dla danej daty z kalendarza na ustawienie parametrów pogodowych takich jak: Faza księzyca, Poziom zachmurzenia, Poziom mgły oraz Rodzaj Opadu
+- Podstrona `pogoda` pozwala dla danej daty z kalendarza na ustawienie parametrów pogodowych takich jak: Faza księżyca, Poziom zachmurzenia, Poziom mgły oraz Rodzaj Opadu
 - Podstrona `Edycja nieba` składa się z 3 sekcji:
-    - Gwiazdy - w tej sekcji można przegłądać, edytować i zarzącać gwiazdami
-    - Konstelacje - w tej sekcji morzna przegłądać, edytować i zarzącać kontelacjami
-    - Mapa nieba - ta sekcja jest reprezentacją nieba na której są wyśwetlane gwazdy. 
+    - Gwiazdy - w tej sekcji można przeglądać, edytować i zarządzać gwiazdami
+    - Konstelacje - w tej sekcji można przeglądać, edytować i zarządzać kontentacjami
+    - Mapa nieba - ta sekcja jest reprezentacją nieba na której są wyświetlane gwiazdy. 
 
 
 <br>
@@ -44,13 +44,11 @@ quasar build
 
 
 ### Konfiguracja połączenia do serwera api
-> src/boot/axios.ts
+>.env
 ```
-  baseURL: 'api_url',
-  auth: {
-    username: "username",
-    password: "password"
-  },
+ApiURL="url"
+ApiLogin="login"
+ApiPassword="password"
 
 ```
 
@@ -59,7 +57,7 @@ quasar build
 
 Podstrona `Pogoda`:
  - kalendarz - jeżeli pod daną datą jest kropka oznacza to że parametry dla danego dania zostały już przypisane
- - Faza księżyca - jest to slider na którym można wybrać 1 z 8 dostępnych faz księzyca 
+ - Faza księżyca - jest to slider na którym można wybrać 1 z 8 dostępnych faz księżyca 
     - ![Nów](./samlpes/ksiezyc/now.png)
     - ![przybywający sierp](./samlpes/ksiezyc/przybywajacy_sierp.png)
     - ![pierwsza kwadra](./samlpes/ksiezyc/pierwsza_kwadra.png)
@@ -76,20 +74,20 @@ Podstrona `Edycja nieba`:
 - Gwiazdy:
     - usuwanie gwiazd
     - dodawanie nowych gwiazd
-    - Możliwośc pokazania gwiazdy na niebie.
-    - Wyśwetlenie informacji o gwieździe: Zdjęcie, Nazwa, Opis, Pozycja na niebie (x, y), Status (Zapalona/Zgaszona), Kontelacje - nazwy kontelacji w jakich znajduje się dana gwiazda
+    - Możliwość pokazania gwiazdy na niebie.
+    - Wyświetlenie informacji o gwieździe: Zdjęcie, Nazwa, Opis, Pozycja na niebie (x, y), Status (Zapalona/Zgaszona), Konstelacje - nazwy konstelacji w jakich znajduje się dana gwiazda
     - Edycja informacji o gwieździe: Nazwa, Opis, Link do zdjęcia, Pozycja x, Pozycja y
     - Zarządzanie stanem gwiazdy
-    - Zarządzanie przynależności do danej kontelacji (dodawanie/usuwanie z konstelacji)
+    - Zarządzanie przynależności do danej konstelacji (dodawanie/usuwanie z konstelacji)
 - Konstelacje
-    - usuwanie kontelacji
+    - usuwanie konstelacji
     - dodawanie nowych konstelacji
-    - Możliwośc pokazania kontelacji na niebie.
-    - Wyśwetlenie informacji o kontelacji: Zdjęcie, Nazwa, opis, Gwiazdy - nazwy gwiazd wchodzących w skład kontelacji
+    - Możliwość pokazania konstelacji na niebie.
+    - Wyświetlenie informacji o konstelacji: Zdjęcie, Nazwa, opis, Gwiazdy - nazwy gwiazd wchodzących w skład konstelacji
     - Edycja informacji o konstelacji: Nazwa, Opis, Link do zdjęcia
-    - Zarządzanie przynależnością gwaizd do konstelacji (dodawanie usuwanie)
+    - Zarządzanie przynależnością gwiazd do konstelacji (dodawanie usuwanie)
     - Zarządzanie stanem gwiazd dla całej konstelacji - możliwość zgaszenia i zapalenia wszystkich gwiazd znajdujących się w danej konstelacji
-- Mapa Nieba - jest to odworowanie nocnego nieba na którym znajdują się gwiazdy. Na mapie jest nałożona siatka która pozwala na łatwiejsze poruszanie się po niebie i przeglądanie gwiazd. Po kliknięci na daną gwiazdę zostają wyśwetlone informacje o klikniętej gwieździe. Po kliknięci przycisku pokaż znajdującego się przy danej gwieździe lub kontelacji odpowiednie gwiazdy zostaną zaznaczone zieloną ramką i pokazane na mapie nieba
+- Mapa Nieba - jest to odwzorowanie nocnego nieba na którym znajdują się gwiazdy. Na mapie jest nałożona siatka która pozwala na łatwiejsze poruszanie się po niebie i przeglądanie gwiazd. Po kliknięci na daną gwiazdę zostają wyświetlone informacje o klikniętej gwieździe. Po kliknięci przycisku pokaż znajdującego się przy danej gwieździe lub konstelacji odpowiednie gwiazdy zostaną zaznaczone zieloną ramką i pokazane na mapie nieba
 
 ---
 
